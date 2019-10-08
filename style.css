@@ -8,13 +8,26 @@
 body{
     height: 100vh;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
     background: linear-gradient(rgb(47, 150,163), rgb(48,62,143));
     font-family: sans-serif;
     color: white;
+    flex-wrap: wrap;
+    border: 1px solid red;
 }
+
+.left{
+    flex: 1;
+    margin-left: 50px;
+}
+
+.right{
+    flex: 1;
+}
+
+
 
 .location,
 .temperature
@@ -45,14 +58,5 @@ body{
 .degree-section h2 {
     font-size: 40px;
 }
-
-
-
-
-
-
-
-
-
 
 

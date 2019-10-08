@@ -7,6 +7,76 @@ window.addEventListener("load", () => {
     let locationTimezone = document.querySelector(".location-timezone");
 
 
+    const news = document.querySelector('ul');
+
+    let newsUrl = "https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=PO8ldywdaxGLcZaDFByVHrXognwllorv";
+
+    const myList = document.querySelector('ul');
+    const myRequest = new Request('products.json');
+
+    fetch(newsUrl)
+        .then(response => response.json())
+        .then(data => {
+            for (const product of data.results) {
+                let listItem = document.createElement('li');
+                listItem.appendChild(
+                    document.createElement('strong')
+                ).textContent = product.Name;
+                listItem.append(
+                    ` ${
+                        product.title
+                    }.  `
+                );
+                listItem.appendChild(
+                    document.createElement('strong')
+                )
+                myList.appendChild(listItem);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
             long = position.coords.longitude;
